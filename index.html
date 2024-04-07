@@ -4,6 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dev Detective Project</title>
+    <title>DevDetective - CodeHelp</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.png">
+    <link rel="manifest" href="./assets/site.webmanifest">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <div class="container">
@@ -11,14 +22,14 @@
             <h1 class="title">DevDetective</h1>
             <div id="btn-mode">
                 <p class="mode-text">DARK</p>
-                <div class="icon-container"><img src="" alt=""></div>
+                <div class="icon-container"><img id="mode-icon" src="./assets/images/moon-icon.svg" alt=""></div>
             </div>
         </header>
 
         <main>
             <div class="search-bar">
                 <div class="search-icon"></div>
-                <input type="search" placeholder="Enter a Github username..." id="input">
+                <input type="search" placeholder="Enter a Github username..." id="input" required>
                 <div class="error">
                     <p id="no-results">No Search Results</p >
                 </div>
@@ -28,11 +39,13 @@
             <div class="profile-container"> 
                 <div class="profile-content">
                     <div class="profile-header">
-                        <img id="avatar" src="#" alt="">
+                        <img id="avatar" src="https://avatars.githubusercontent.com/u/64855541?v=4" alt="">
                         <div class="profile-info-wrapper">
-                            <h2 id="name"></h2>
-                            <a href="#" target="_blank" rel="noopener noreferrer" id="user"></a>
-                            <p id="date"></p>
+                            <div class="profile-name">
+                                <h2 id="name">Pranay Gupta</h2>
+                                 <a href="#" target="_blank" rel="noopener noreferrer" id="user">@pranayGupta</a>
+                            </div>
+                            <p id="date">19 may 2020</p>
                         </div>
                     </div>
 
