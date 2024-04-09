@@ -162,4 +162,126 @@ body {
     justify-content: space-between;
 }
 
+#bio {
+    line-height: 25px;
+    opacity: 0.75;
+}
 
+
+.profile-stats-wrapper {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--lm-bg);
+    text-align: center;
+    border-radius: 10px;
+    padding: 18px;
+}
+
+.profile-stat{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 8px;
+}
+
+#stats-title {
+    font-size: 11px;
+}
+
+#stat-value {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--lm-text-alt);
+}
+
+.profile-bottom-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 16px 0;
+}
+
+.profile-info {
+    display: flex;
+    width: 50%;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.button-icons {
+    width: 20px;
+    filter: var(--lm-icon-bg);
+}
+
+.profile-info p {
+    overflow-wrap: break-word;
+}
+
+.profile-info a {
+    color: var(--lm-text);
+    word-break: break-all;
+}
+
+.error {
+    position: absolute;
+    color: red;
+    font-weight: bold;
+    right: 10px;
+    top: -25px;
+}
+
+/* below classes are for Dark mode  */
+.dm-text {
+    color: var(--dm-text);
+}
+
+.dm-bg {
+    background-color: var(--dm-bg);
+}
+
+.dm-bg-sec {
+    background-color: var(--dm-bg-content);
+}
+
+.active {
+    box-shadow: var(--lm-shadow);
+}
+
+
+
+
+/* responsiveness */
+
+@media screen and (min-width: 768px){
+    .container {
+        width: 573px;
+    }
+    .search-bar {
+        padding: 10px;
+    }
+
+    #input {
+        font-size: 18px;
+    }
+
+    #input::placeholder {
+        font-size: 18px;
+    }
+
+    .search-button {
+        padding: 14px 28px;
+        font-size: 16px;
+    }
+
+    .profile-container {
+        padding: 40px;
+    }
+
+    .profile-header {
+        margin-bottom: 0;
+    }
+
+    #avatar {
+        width: 117px;
+    }
+}
