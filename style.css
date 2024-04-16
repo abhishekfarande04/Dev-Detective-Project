@@ -223,7 +223,7 @@ body {
 }
 
 .error {
-    position: absolute;
+    position: relative;
     color: red;
     font-weight: bold;
     right: 10px;
@@ -339,9 +339,58 @@ body {
         width: 47.5%;
         font-size: 15px;
     }
-
-
-
-
     
+}
+
+
+@media screen and (min-width: 1280px) {
+
+    .container {
+        width: 730px;
+    }
+
+    .profile-container {
+        position: relative;
+    }
+
+    .profile-content {
+        width: 480px;
+        margin-left: auto;
+        gap: 16px;
+    }
+    
+    #avatar {
+        position: absolute;
+        left: 0;
+        margin-left: 40px;
+    }
+
+    .profile-info-wrapper {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .profile-name {
+        gap: 2px;
+    }
+
+    #date {
+        padding-top: 10px;
+    }
+
+    .profile-stats-wrapper {
+        margin: 20px 0;
+    }
+
+    .error {
+        top: 50%;
+        right: 20%;
+        transform: translateY(-50%);
+        font-size: 15px;
+    }
+
+    #input {
+        width: 65%;
+    }
 }
