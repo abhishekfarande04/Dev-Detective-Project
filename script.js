@@ -23,3 +23,41 @@ const page = get("page");
 const twitter= get("twitter");
 const company= get("company");
 let darkMode=false;
+
+
+// Event listeners
+btnsubmit.addEventListener("click", function() {
+    // if input value is non empty
+    if (input.value !== "") {
+        getUserData(url+input.value);
+    }
+})
+
+// dark and light mode 
+btnmode.addEventListener ("click", function() {
+    if (darkMode=false) {
+        darkModeProperties();    // this will make Darkmode ON as it is false in If condition
+    } else {
+        lightModeProperties();
+    }
+})
+
+// adding functionality for When user enters Enter key it will search for the userName
+input.addEventListener(
+    "keydown",
+    function(e) {
+        if (e.key == "Enter") {
+            if (input.value !== "") {
+                getUserData(url+input.value);
+            }
+        }
+    }
+)
+
+
+input.addEventListener("input", function() {
+    noresults.style.display = "none";
+});
+
+
+
