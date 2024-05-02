@@ -87,6 +87,25 @@ function getUserData(gitUrl) {
 
 //Render 
 function updateProfile(data) {
+    if(data.message !== "Not Found") {
+        noresults.style.display="None";
+
+        function checkNull(param1,param2) {
+            if(param1 === "" || param1 === null) {
+                param2.style.opacity= 0.5;
+                param2.previousElementSibling.style.opacity= 0.5;
+                return false;
+            } else {
+                return true;
+            }
+        }
+    }
+
+    avatar.src = `${data.avatar_url}`;
+    userName.innerText= data.name === null ? data.login : data.name;
+    
+
+
 
 }
 
