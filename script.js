@@ -99,15 +99,31 @@ function updateProfile(data) {
                 return true;
             }
         }
-    }
+    
 
     avatar.src = `${data.avatar_url}`;
     userName.innerText= data.name === null ? data.login : data.name;
-    
+    user.innerText= `@${data.login}`;
+    user.href= `${data.html_url}`;
+    datasegments=data.created_at.split("T").shift().split("-");
+    data.innerText=`joined ${datasegments[2]} ${months[datasegments[1]-1]} ${datasegments[0]}`;
+    data.innerText=data.bio == null ? "This prfile has NO Bio" : `${data.bio}`;
+    repos.innerText=`${data.public_repos}`;
+    followers.innerText=`${data.followers}`;
+    following.innerText=`${data.following}`;
+    user_location.innerText=checkNull(data.location,user_location) ? data.location:"Not available";
+    page.innerText=checkNull(data.blog,page) ? data.blog : "Not available";
+    twitter.innerText=checkNull(data.twitter_username,twitter) ? data.twitter_username : "Not available";
+    twitter.href=checkNull(data.twitter_username,twitter) ? `https://twitter.com/${data.twitter_username}`: `#`;
+    company.innerText=checkNull(data.company,company) ? data.company : "Not Available";
+    searchbar.classList.toggle("active");
+    profilecontainer.classList.toggle("active");
 
-
-
+    } else {
+        noresults.style.display="block";
+    }
 }
+
 
 
 //SWITCH TO DARK MODE - activateDarkMode()
@@ -144,3 +160,6 @@ function darkModeProperties() {
     localStorage.setItem("dark-mode", false);
     console.log("setting dark mode to false");
   }
+
+
+  
