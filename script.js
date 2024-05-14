@@ -73,22 +73,21 @@ btnmode.addEventListener("click",function() {
 function getUserData(gitUrl) {
     // alternative to async and await 
     fetch(gitUrl)
-    .then((response) => response.json())
-    .then((data) => {
+      .then((response) => response.json())
+      .then((data) => {
         console.log(data);
         updateProfile(data);
-     })
-
+    })
     .catch((error) => {
         throw error;
-     });
+    }); 
 
 }
 
 //Render 
 function updateProfile(data) {
     if(data.message !== "Not Found") {
-        noresults.style.display="None";
+        noresults.style.display="none";
 
         function checkNull(param1,param2) {
             if(param1 === "" || param1 === null) {
@@ -142,10 +141,10 @@ function darkModeProperties() {
   
     console.log("setting dark mode to true");
   
-  }
+}
   
   //SWITCH TO LIGHT MODE - activateLightMode()
-  function lightModeProperties() {
+function lightModeProperties() {
     root.setProperty("--lm-bg", "#F6F8FF");
     root.setProperty("--lm-bg-content", "#FEFEFE");
     root.setProperty("--lm-text", "#4B6A9B");
@@ -159,7 +158,28 @@ function darkModeProperties() {
   
     localStorage.setItem("dark-mode", false);
     console.log("setting dark mode to false");
-  }
+}
 
+// initialise UI 
+function init() {
+    darkMode=false;
+    const value = localStorage.getItem("dark-mode");
 
+    if(value === null) {
+    console.log("null k andar");
+    localStorage.setItem("dark-mode", darkMode);
+    lightModeProperties();
+    }
+    else if(value == "true") {
+    console.log("truer k andar");
+    darkModeProperties();
+    } 
+    else if(value == "false") {
+    console.log("false k andar");
+    lightModeProperties();
+    }  
+    getUserData(url+ "thepranaygupta");
+}
+
+init();
   
